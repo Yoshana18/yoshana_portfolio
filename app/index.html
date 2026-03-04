@@ -7,6 +7,7 @@
     <title>Yoshana's Website</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/index.css">
+    <script src="../scripts/index.js" defer></script>
 </head>
 
 <body>
@@ -14,27 +15,29 @@
         <div class="logo">Yoshana Magendran</div>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="../pages/about.html">About</a></li>
-                <li><a href="../pages/project.html">Projects</a></li>
-                <li><a href="../pages/contact.html">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="home" class="hero">
-        <h1>I'm Yoshana Magendran</h1>
+    <section id="home" class="hero reveal">
+        <h1>I'm <span id="typing-text"></span></h1>
         <p>
             A passionate developer building web experiences.
-            I am currently a student at Nanyang Polytechnic, pursuing the course AI & Data Engineering.
-            From this portfolio, you would know more about me and what I do! Join me on this Journey
+            I am currently a Final Year Student @ Nanyang Polytechnic, pursuing the course AI & Data Engineering.
+            Join me on this portfolio journey, so that you can know more about me and what I did! 
         </p>
         <a href="#projects" class="btn">View My Work</a>
     </section>
 
-    <section id="about">
+    <section id="about" class="reveal">
         <h2>About Me</h2>
-        <p>I'm Yoshana Magendran, a Year 3 student currently pursuing a Diploma in AI and Data Engineering at Nanyang
+        <p>I'm Yoshana Magendran, a Final Year Student currently pursuing a Diploma in AI and Data Engineering at Nanyang
             Polytechnic.
             As an aspiring engineer, I am eager to begin my journey in the dynamic field of Artificial Intelligence.
             I aim to leverage my strong foundation in technical knowledge and mathematics to contribute meaningfully
@@ -43,50 +46,243 @@
             leadership capabilities.</p>
     </section>
 
-    <section id="projects">
-        <h2>Key Projects</h2>
+    <section id="education" class="reveal">
+        <h2>Education</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-left">
+                    <p class="timeline-date">2023-2026</p>
+                    <h4 class="timeline-place">Nanyang Polytechnic</h4>
+                </div>
+                <div class="timeline-right">
+                    <h3 class="timeline-title">Diploma of AI and Data Engineering.</h3>
+                    <p><strong>CCA:</strong> An active member of the School of Engineering (SEG) Club.</p>
+                    <p>I actively volunteered in various club events, including serving as a student mentor during the Freshmen Orientation 2025, acting as a Student Champion for the Innovation & Enterprise (I&E) event, and facilitating games at club-based camps</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-left">
+                    <p class="timeline-date">2019-2022</p>
+                    <h4 class="timeline-place">Punggol Secondary School</h4>
+                </div>
+                <div class="timeline-right">
+                    <h3 class="timeline-title">O-Level , L1R5-14, L1R4-11</h3>
+                    <p><strong>CCA:</strong> Active Member of club, 2021'22 President of the Audio Visual Aid (AVA) Club. Senior Student Counsellor.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="reveal">
+        <h2>Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-left">
+                    <p class="timeline-date">2-6 September 2024</p>
+                    <h4 class="timeline-place">Nanyang Polytechnic</h4>
+                </div>
+                <div class="timeline-right">
+                    <h3 class="timeline-title">School of Information Technology - Code Overflow Hackathon</h3>
+                    <p>I took part in the SIT Hackathon, where I gained hands-on experience in developing software applications using Flask, Git, GitHub, and the Jinja framework. I also received a certificate of participation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="reveal">
+        <h2>Skills</h2>
+        <p>
+            Here you can list your technical and soft skills. You could use a grid or a list format.
+            <br>
+            Example: Python, JavaScript, SQL, Docker, Kubernetes, Teamwork, Communication.
+        </p>
+    </section>
+
+    <section id="projects" class="reveal">
+        <h2>Key Student Projects</h2>
         <div class="project-grid">
 
-            <div class="project-card">
-                <h3>AI Application Development</h3>
-                <p> Developed a Kubernetes-based container orchestration project that automates application setup, deployment, and 
-                    management using Docker, Minikube, and Kubernetes manifests. Built modular components for training, preprocessing, 
-                    inference, database, and dashboard services, showcasing practical experience with microservices and container ecosystems.
-                </p>
+            <div class="project-card" 
+                 data-title="AI Application Development"
+                 data-long-desc="Project Overview: Developed a Kubernetes-based container orchestration project that automates application setup, deployment, and management using Docker and Minikube. 
+                 My Contribution: Built modular components for training, preprocessing, and inference services, and managed the Kubernetes manifests."
+                 data-gh-link="https://github.com/jiaawennnn/k8s_project"
+                 data-img-src="../assets/placeholder-flowchart.png">
+                <div class="project-content">
+                    <h3>AI Application  Development</h3>
+                    <p>Developed a container orchestration project to automate application deployment and management. Built modular components for various services, showcasing experience with microservices and container ecosystems.</p>
+                </div>
+                <div class="project-footer">
+                    <div class="project-tags">
+                        <span>Kubernetes</span>
+                        <span>Docker</span>
+                        <span>Minikube</span>
+                    </div>
+                    <button class="btn-learn-more">Details</button>
+                </div>
             </div>
 
-            <div class="project-card">
-                <h3>AI Engineering Project</h3>
-                <p> Desgined and implemented a fucntional web application that integrates backend logic and frontend UI to solve a real-world task. 
-                    Built using HTML, Python and CSS, showcasing full-stack development fundamentals. and collaborativesoftware engineering practices. 
-                </p>
+            <div class="project-card"
+                 data-title="AI Engineering Project"
+                 data-long-desc="Project Overview: Designed and implemented a functional web application that integrates backend logic and a frontend UI to solve a real-world task. 
+                 My Contribution: Focused on the backend logic using Python and collaborated on the frontend integration using HTML and CSS."
+                 data-gh-link="https://github.com/FutureYY/AIEP_Working">
+                <div class="project-content">
+                    <h3>AI Engineering Project</h3>
+                    <p>Designed and implemented a functional web application that integrates backend logic and a frontend UI to solve a real-world task, showcasing full-stack development and collaborative software engineering practices.</p>
+                </div>
+                <div class="project-footer">
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                    </div>
+                    <button class="btn-learn-more">Details</button>
+                </div>
             </div>
 
-            <div class="project-card">
-                <h3>Project 3</h3>
-                <p>Designed and proposed Rescue Rhino, an AI-powered amphibious autonomous mobile robot for beach patrol and rescue operations.
-                    Integrated ROS2, NVIDIA Jetson Orin NX, and multi-sensor fusion (LiDAR, RGB-D, GNSS, sonar, IMU) to enable real-time navigation, 
-                    obstacle detection, and human identification across land and water environments.
-                </p>
+            <div class="project-card"
+                 data-title="Automation and Robotics Technology">
+                <div class="project-content">
+                    <h3>Automation and Robotics Technology</h3>
+                    <p>Designed "Rescue Rhino," an AI-powered amphibious autonomous robot for beach patrol. Integrated multi-sensor fusion for real-time navigation, obstacle detection, and human identification on land and water.</p>
+                </div>
+                <div class="project-footer">
+                    <div class="project-tags">
+                        <span>ROS2</span>
+                        <span>NVIDIA Jetson</span>
+                        <span>AI</span>
+                    </div>
+                    <button class="btn-learn-more">Details</button>
+                </div>
+            </div>
+
+            <div class="project-card"
+                 data-title="Engineering Exploration Project"
+                 data-long-desc="Project Overview: Designed a sustainable urban vertical farming solution using M5 Stack sensors and Blockly. 
+                 My Contribution: Developed the conveyor belt rotation logic using servo motors and acted as the code merger to integrate team components."
+                 data-gh-link="https://github.com/yoshana18/placeholder-repo3"
+                 data-img-src="../assets/placeholder-image.png">
+                <div class="project-content">
+                    <h3>Engineering Exploration Project</h3>
+                    <p>Designed a sustainable urban vertical farming solution. Developed conveyor belt logic using servo motors and integrated team components, resulting in an automated farm with real-time monitoring.</p>
+                </div>
+                <div class="project-footer">
+                    <div class="project-tags">
+                        <span>M5 Stack</span>
+                        <span>Blockly</span>
+                        <span>Servo Motors</span>
+                    </div>
+                    <button class="btn-learn-more">Details</button>
+                </div>
+            </div>
+
+            <div class="project-card"
+                 data-title="Internet of Things Application">
+                <div class="project-content">
+                    <h3>Internet of Things Application</h3>
+                    <p>Led the development of an elderly health monitoring system. Integrated various sensors and created an online dashboard to visualize real-time data for tracking activity and environment.</p>
+                </div>
+                <div class="project-footer">
+                    <div class="project-tags">
+                        <span>Raspberry Pi</span>
+                        <span>Arduino</span>
+                        <span>IoT</span>
+                    </div>
+                    <button class="btn-learn-more">Details</button>
+                </div>
+            </div>
+
+            <div class="project-card"
+                 data-title="Computer Vision"
+                 data-long-desc="Developed a computer vision system using OpenCV and Python to detect and classify objects in real-time video streams. The project involved implementing image processing techniques such as edge detection, contour analysis, and feature extraction to enable accurate object recognition in various lighting conditions."
+                 data-gh-link="https://github.com/FutureYY/Plant_Disease">
+                <div class="project-content">
+                    <h3>Computer Vision</h3>
+                    <p>Developed a system to detect and classify objects in real-time video streams. Implemented image processing techniques for accurate object recognition in various lighting conditions.</p>
+                </div>
+                <div class="project-footer">
+                    <div class="project-tags">
+                        <span>OpenCV</span>
+                        <span>Python</span>
+                        <span>Computer Vision</span>
+                    </div>
+                    <button class="btn-learn-more">Details</button>
+                </div>
+            </div>
+
+            <div class="project-card"
+                 data-title="Associate AI Engineer Project - AI Singapore"
+                 data-long-desc="Developed a computer vision system using OpenCV and Python to detect and classify objects in real-time video streams. The project involved implementing image processing techniques such as edge detection, contour analysis, and feature extraction to enable accurate object recognition in various lighting conditions."
+                 data-gh-link="https://github.com/FutureYY/Plant_Disease">
+                <div class="project-content">
+                    <h3>Associate AI Engineer Project</h3>
+                    <p>need to write a description</p>
+                </div>
+                <div class="project-footer">
+                    <div class="project-tags">
+                        <span>OpenCV</span>
+                        <span>Python</span>
+                        <span>Computer Vision</span>
+                    </div>
+                    <button class="btn-learn-more">Details</button>
+                </div>
+            </div>
+
+            <div class="project-card"
+                 data-title="Image Slicing and Stitching Project - Internship"
+                 data-long-desc="Developed a computer vision system using OpenCV and Python to detect and classify objects in real-time video streams. The project involved implementing image processing techniques such as edge detection, contour analysis, and feature extraction to enable accurate object recognition in various lighting conditions."
+                 data-gh-link="https://github.com/FutureYY/Plant_Disease">
+                <div class="project-content">
+                    <h3>Image Slicing and Stitching Project</h3>
+                    <p>need to write</p>
+                </div>
+                <div class="project-footer">
+                    <div class="project-tags">
+                        <span>OpenCV</span>
+                        <span>C++</span>
+                        <span>Computer Vision</span>
+                        <span>TensorRT - DarkNet</span>
+                    </div>
+                    <button class="btn-learn-more">Details</button>
+                </div>
             </div>
 
         </div>
     </section>
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Thank you for visiting my portfolio! 
-            Feel free to reach out to me via email at yoshana.magendran.18@gmail.com or through my social media profiles.
-            <p> 
-                <a href="https://www.linkedin.com/in/yoshana-magendran-32666330a/" class="btn" target="_blank">LinkedIn</a>
-                <a href="https://github.com/yoshana18" class="btn" target="_blank">GitHub</a>
-            </p>
+
+    <section id="achievements" class="reveal">
+        <h2>Achievements</h2>
+        <p>
+            This section is perfect for listing any awards, certifications, or notable accomplishments.
         </p>
     </section>
 
-    <footer>
-        <p> CopyRight &copy; 2026 Yoshana Magendran</p>
-    </footer>
+    <section id="contact" class="reveal">
+        <h2>Contact</h2>
+        <p>Thank you for visiting my portfolio! 
+            Feel free to reach out to me via email at yoshana.magendran.18@gmail.com or through my social media profiles.</p>
+        <div style="margin-top: 20px;"> 
+            <a href="https://www.linkedin.com/in/yoshana-magendran-32666330a/" class="btn" target="_blank">LinkedIn</a>
+            <a href="https://github.com/yoshana18" class="btn" target="_blank">GitHub</a>
+        </div>
+    </section>
 
+    <!-- The Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="modal-title"></h2>
+            <img id="modal-img" src="" alt="Project Image">
+            <p id="modal-desc"></p>
+            <a id="modal-gh-link" href="#" class="btn" target="_blank">View on GitHub</a>
+        </div>
+    </div>
+
+    <footer>
+        <p> CopyRight &copy; <span id="year"></span> Yoshana Magendran</p>
+    </footer>
 </body>
 
 </html>
