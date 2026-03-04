@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.reveal').forEach(el => {
         observer.observe(el);
     });
-
+    
     // Modal Logic
     const modal = document.getElementById('project-modal');
     const closeButton = document.querySelector('.close-button');
@@ -73,6 +73,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (ghLink) {
                 modalGhLink.href = ghLink;
                 modalGhLink.style.display = 'inline-block';
+                if (ghLink.includes('hackster.io')) {
+                    modalGhLink.textContent = 'View on Hackster.io';
+                } else {
+                    modalGhLink.textContent = 'View on GitHub';
+                }
             } else {
                 modalGhLink.style.display = 'none';
             }
@@ -88,4 +93,5 @@ document.addEventListener('DOMContentLoaded', () => {
             modal.style.display = 'none';
         }
     };
+
 });
