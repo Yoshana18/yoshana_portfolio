@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const modalTitle = document.getElementById('modal-title');
     const modalDesc = document.getElementById('modal-desc');
+    const modalGallery = document.getElementById('modal-gallery');
     const modalImg = document.getElementById('modal-img');
     const modalGhLink = document.getElementById('modal-gh-link');
 
@@ -51,6 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const shortDesc = card.querySelector('.project-content p').textContent;
             const ghLink = card.dataset.ghLink;
             const imgSrc = card.dataset.imgSrc;
+            const imagesData = card.dataset.images;
 
             const description = longDesc || shortDesc;
 
@@ -63,11 +65,28 @@ document.addEventListener('DOMContentLoaded', () => {
             
             modalDesc.innerHTML = formattedDesc;
             
-            if (imgSrc) {
+            modalImg.style.display = 'none';
+            modalGallery.style.display = 'none';
+            modalGallery.innerHTML = '';
+
+            if (imagesData) {
+                // Handle multiple images (Side by Side)
+                try {
+                    const images = JSON.parse(imagesData);
+                    modalGallery.style.display = 'flex';
+                    images.forEach(img => {
+                        const div = document.createElement('div');
+                        div.className = 'gallery-item';
+                        div.innerHTML = `<img src="${img.src}" alt="${img.caption}"><p class="gallery-caption">${img.caption}</p>`;
+                        modalGallery.appendChild(div);
+                    });
+                } catch (e) {
+                    console.error("Error parsing images JSON", e);
+                }
+            } else if (imgSrc) {
+                // Handle single image (Old way)
                 modalImg.src = imgSrc;
                 modalImg.style.display = 'block';
-            } else {
-                modalImg.style.display = 'none';
             }
 
             if (ghLink) {
@@ -92,6 +111,63 @@ document.addEventListener('DOMContentLoaded', () => {
         if (event.target == modal) {
             modal.style.display = 'none';
         }
+        if (typeof certModal !== 'undefined' && event.target == certModal) {
+            certModal.style.display = 'none';
+            if (typeof certFrame !== 'undefined') certFrame.src = '';
+        }
     };
+
+    // Achievement Click Effect
+    const achievementCategories = document.querySelectorAll('.achievement-category');
+
+    achievementCategories.forEach(clickedCategory => {
+        const header = clickedCategory.querySelector('h3');
+        const grid = clickedCategory.querySelector('.achievement-grid');
+
+        if (grid && header) {
+            header.addEventListener('click', () => {
+                const isCurrentlyActive = grid.classList.contains('active');
+
+                // Close all other categories
+                achievementCategories.forEach(otherCategory => {
+                    otherCategory.querySelector('h3').classList.remove('active');
+                    otherCategory.querySelector('.achievement-grid').classList.remove('active');
+                });
+
+                // If it wasn't active, open it
+                if (!isCurrentlyActive) {
+                    header.classList.add('active');
+                    grid.classList.add('active');
+                }
+            });
+        }
+    });
+
+    // Certificate Modal Logic
+    const certModal = document.getElementById('cert-modal');
+    const certFrame = document.getElementById('cert-frame');
+    const certClose = document.querySelector('.cert-close');
+    const certButtons = document.querySelectorAll('.achievement-card .btn-outline');
+
+    if (certModal && certFrame && certButtons.length > 0) {
+        certButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const href = btn.getAttribute('href');
+                // Check if it is a PDF or a local file (doesn't start with http/https)
+                // External links (Credly, etc.) will function normally (new tab)
+                if (href && (href.endsWith('.pdf') || !href.startsWith('http'))) {
+                    e.preventDefault();
+                    certFrame.src = href;
+                    certModal.style.display = 'block';
+                }
+            });
+        });
+
+        certClose.onclick = () => {
+            certModal.style.display = 'none';
+            certFrame.src = ''; // Clear src to stop loading
+        };
+
+    }
 
 });
