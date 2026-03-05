@@ -28,7 +28,7 @@
     <section id="home" class="hero reveal">
         <h1>I'm <span id="typing-text"></span></h1>
         <p>
-            A passionate developer building web experiences.
+            A passionate developer focused on Computer Vision, Optimization & Real-World Deployment of AI Systems.
             I am currently a Final Year Student @ Nanyang Polytechnic, pursuing the course AI & Data Engineering.
             Join me on this portfolio journey, so that you can know more about me and what I did! 
         </p>
@@ -92,8 +92,8 @@
                 </div>
                 <div class="timeline-right">
                     <h3 class="timeline-title">Senquire Pte Ltd</h3>
-                    <p>Contributed to the optimization and enhancement of production AI systems, focusing on computer vision workflows and object detection models. 
-                        Improved model performance through benchmarking, inference analysis, and optimization, supporting scalable and deployment-ready solutions.
+                    <p> Contributed to the optimization and enhancement of production AI systems, focusing on computer vision workflows and object detection models. 
+                        Improved production model inference efficiency through benchmarking and optimization techniques, supporting scalable deployment workflows.
                         Gained hands-on experience in deep learning, performance evaluation, and real-world AI system development, strengthening my ability to balance 
                         accuracy, efficiency, and practical implementation.
                         
@@ -191,6 +191,7 @@
                     <span>GitHub</span>
                     <span>GitLab</span>
                     <span>Darknet</span>
+                    <span>Kedro</span>
                     <span class="beginner">TensorRT</span>
                     <span class="beginner">CUDA</span>
                     <span class="beginner">CuDNN</span>
@@ -226,20 +227,26 @@
         <div class="project-grid">
 
             <div class="project-card" 
-                 data-title="AI Application Development"
-                 data-long-desc="Project Overview: Developed a Kubernetes-based container orchestration project that automates application setup, deployment, and management using Docker and Minikube. 
-                 My Contribution: Built modular components for training, preprocessing, and inference services, and managed the Kubernetes manifests."
+                 data-title="AI-Powered Real vs Generated Image Classification System"
+                 data-long-desc="Project Overview: Developed an AI-based classification system to address the growing issue of AI-generated content being passed off as authentic media. 
+                 The model leverages deep learning techniques to analyze subtle frequency-domain artifacts and visual inconsistencies that differentiate real images from synthetically generated ones.
+                 To support production-level deployment, the application was containerized and orchestrated using Kubernetes, ensuring scalability, load balancing, and high availability under varying traffic conditions.
+                 The final system provides users with a reliable and scalable authenticity verification tool for real-world digital content validation."
                  data-gh-link="https://github.com/jiaawennnn/k8s_project"
                  data-img-src="../assets/placeholder-flowchart.png">
                 <div class="project-content">
-                    <h3>AI Application  Development</h3>
-                    <p>Developed a container orchestration project to automate application deployment and management. Built modular components for various services, showcasing experience with microservices and container ecosystems.</p>
+                    <h3>AI Real vs Generated Image Detector</h3>
+                    <p>
+                        Built a deep learning-based system to classify real and AI-generated images by analyzing subtle visual and frequency patterns. 
+                        Deployed using Kubernetes to ensure scalability and high availability for reliable authenticity verification.
+                    </p>
                 </div>
                 <div class="project-footer">
                     <div class="project-tags">
                         <span>Kubernetes</span>
                         <span>Docker</span>
                         <span>Minikube</span>
+                        <span>Deep Learning</span>
                     </div>
                     <button class="btn-learn-more">Details</button>
                 </div>
@@ -268,32 +275,48 @@
             </div>
 
             <div class="project-card"
-                 data-title="Image Slicing and Stitching Project - Internship"
-                 data-long-desc="Developed a computer vision system using OpenCV and Python to detect and classify objects in real-time video streams. The project involved implementing image processing techniques 
-                 such as edge detection, contour analysis, and feature extraction to enable accurate object recognition in various lighting conditions."
-                 data-gh-link="https://github.com/FutureYY/Plant_Disease">
+                 data-title="High Resolution Image Processing - Internship"
+                 data-images='[{"src": "../assets/static_images/Darknet_FLowchart.png", "caption": "Darknet-Yolov7 Flowchart"}, {"src": "../assets/static_images/TensorRT_Flowchart.png", "caption": "TensorRT-Nanodet Flowchart"}]'
+                 data-long-desc="Developed a memory-efficient inference pipeline to handle ultra high-resolution industrial images (up to 11,000 x 5,000 pixels) that exceed conventional GPU processing limits. 
+                 Instead of down-sampling large images, which causes loss of fine-grained defects - the system divides them into 416x416 tiles matching the model's native input size.
+                 Each tile is processed independently using YOLOv7-Tiny (Darknet) and Nanodet-Plus (TensorRT), with bounding boxes remapped into global coordinates before stitching results back into the original image space.
+                 Implemented in C++ using OpenCV and Libvips (lazy loading) for efficient preprocessing, adaptive padding, metadata aggregation, and panoramic visualization - enabling gigapixel-scale inspection while maintaining detection accuracy and memory efficiency."
+                 data-gh-link="https://github.com/Yoshana18/Image_slice_stitch_project">
                 <div class="project-content">
-                    <h3>Image Slicing and Stitching Project</h3>
-                    <p>Implemented an image slicing and stitching pipeline to enhance detection accuracy for high-resolution imagery. 
-                        Utilized OpenCV and Darknet with TensorRT acceleration to optimize performance for large-scale image processing.</p>
+                    <h3>High-Resolution Industrial Defect Detection System</h3>
+                    <p>
+                        Designed a Slice-and-Stitch inference system to enable lightweight object detection models to process ultra high-resolution industrial images without GPU memory overflow.
+                        Preserves microscopic defect details through patch-based processing and panoramic reconstruction.
+                    </p>
                 </div>
                 <div class="project-footer">
                     <div class="project-tags">
                         <span>OpenCV</span>
                         <span>C++</span>
+                        <span>Darknet</span>
+                        <span>TensorRT</span>
                         <span>Computer Vision</span>
-                        <span>TensorRT - DarkNet</span>
                     </div>
                     <button class="btn-learn-more">Details</button>
                 </div>
             </div>
-
             <div class="project-card"
-                 data-title="Automation and Robotics Technology">
+                 data-title="Automation and Robotics Technology"
+                 data-images='[{"src": "../assets/static_images/ART_System_FlowChart.png", "caption": "System Flowchart"}, {"src": "../assets/static_images/ART_Components_Block_Diagram.png", "caption": "Block Diagram"}]'
+                 data-long-desc="Project Overview: Rescue Rhino is an autonomous amphibious patrol system designed for beach safety monitoring and security surveillance. The platform operates as a wheeled land vehicle and transitions 
+                 into water mode through a retractable wheel mechanism and deployed propulsion system.
+                 It performs automated coastal patrols, integrating detection capabilities to identify emergencies and support rapid response scenarios. 
+                 The system is also equipped with surveillance cameras to monitor restricted areas and detect unauthorized access.
+                 Rescue Rhino supports Wi-Fi and Bluetooth connectivity for real-time configuration, communication, and coordination with external systems, enabling scalable and intelligent patrolling operations across mixed-terrain environments.
+
+                 My Contribution: Developed the control algorithms and researched on the integrated various sensors for real-time monitoring and feedback. Desigbed Block Diagram, Control FlowChart, 
+                 RQT Graph and Cost Analysis of the resources required for rescue rhino">
                 <div class="project-content">
-                    <h3>Automation and Robotics Technology</h3>
-                    <p>Designed "Rescue Rhino," an AI-powered amphibious autonomous robot for beach patrol. Integrated multi-sensor fusion for real-time navigation, obstacle detection, 
-                        and human identification on land and water.</p>
+                    <h3>Rescue Rhino - Autonomous Amphibious Patrol Platform</h3>
+                    <p>
+                        Developed an autonomous hybrid vehicle capable of operating on both land and water for coastal safety and security patrol. 
+                        Integrates intelligent detection, surveillance systems, and wireless connectivity for real-time monitoring and emergency response.
+                    </p>
                 </div>
                 <div class="project-footer">
                     <div class="project-tags">
@@ -307,15 +330,22 @@
             </div>
 
             <div class="project-card"
-                 data-title="Engineering Exploration Project"
-                 data-long-desc="Project Overview: Designed a sustainable urban vertical farming solution using M5 Stack sensors and Blockly. 
+                 data-title="Rotatable Portable Vertical Farming System"
+                 data-long-desc="Project Overview: This project presents a portable vertical farming system designed to maximize crop yield in limited spaces, such as homes, offices, or urban areas. 
+                 The system features a rotatable structure that ensures plants at the bottom receive adequate sunlight, reducing the need for artificial lighting during the day.
+                 It incorporates renewable energy sources like solar and wind to further minimize overall power consumption. 
+                 An efficient water drainage system ensures proper irrigation and reduces water waste. By optimizing space, energy, and resources, the system supports sustainable, high-yield crop production in environments with limited land availability.
+
                  My Contribution: Developed the conveyor belt rotation logic using servo motors and acted as the code merger to integrate team components."
                  data-gh-link="https://www.hackster.io/women-in-stem/soooooolar-18fbc7"
-                 data-img-src="../assets/placeholder-image.png">
+                 data-img-src="../assets/placeholder-image.png"
+                 data-images='[{"src": "../assets/static_images/Vertical_farming.png", "caption": "Prototype Visualisation"}]'>
                 <div class="project-content">
-                    <h3>Engineering Exploration Project</h3>
-                    <p>Designed a sustainable urban vertical farming solution. Developed conveyor belt logic using servo motors and integrated team components, resulting in an automated 
-                        farm with real-time monitoring.</p>
+                    <h3>Rotatable Portable Vertical Farming System</h3>
+                    <p>
+                        Develop a sustainable, portable vertical farming system that maximizes sunlight exposure, minimizes energy consumption, and allows efficient crop growth in limited spaces.
+                       
+                    </p>
                 </div>
                 <div class="project-footer">
                     <div class="project-tags">
@@ -347,25 +377,212 @@
     </section>
 
     <section id="achievements" class="reveal">
-        <h2>Achievements</h2>
-        <p>
-            This section is perfect for listing any awards, certifications, or notable accomplishments. 
+        <h2>Certifications & Achievements</h2>
+        
+        <div class="achievement-category">
+            <h3>Certifications & Professional Credentials<span class="accordion-icon"></span></h3>
+            <div class="achievement-grid">
+                <div class="achievement-card">
+                    <h4>Associate AI Engineer</h4>
+                    <p class="issuer">AI Singapore</p>
+                    <p class="date">Professional Cert</p>
+                    <a href="https://certificates.aisingapore.org/certificate-verification/1275F2B05-1275F2AA4-1274FE60B/" class="btn-outline" target="_blank">View Credential</a>
+                </div>
+                <div class="achievement-card">
+                    <h4>AI Ethics & Governance</h4>
+                    <p class="issuer">Associate Level</p>
+                    <p class="date">Professional Cert</p>
+                    <a href="https://www.scs.org.sg/membership/verify?id=90de4438-219a-42bd-8311-a2d84b40703e" class="btn-outline" target="_blank">View Credential</a>
+                </div>
+                <div class="achievement-card">
+                    <h4>AI For Industry (Literacy)</h4>
+                    <p class="issuer">AI Singapore</p>
+                    <p class="date">Professional Cert</p>
+                    <a href="https://learn.aisingapore.org/certificate-verification/815F5A9DD4-7EF94E1CC1-138F40BA0/" class="btn-outline" target="_blank">View Credential</a>
+                </div>
+                <div class="achievement-card">
+                    <h4>Azure AI Fundamentals</h4>
+                    <p class="issuer">Microsoft</p>
+                    <p class="date">Professional Cert</p>
+                    <a href="https://www.credly.com/badges/c6d50e9c-5ade-4008-98c6-3b571391a653/public_url" class="btn-outline" target="_blank">View Credential</a>
+                </div>
+                <div class="achievement-card">
+                    <h4>Deep Learning Fundamentals</h4>
+                    <p class="issuer">NVIDIA DLI</p>
+                    <p class="date">Competency Cert</p>
+                    <a href="../assets/professional_credentials/Deep_Learning_Fundamentals_Yoshana_ NVIDIA.pdf" class="btn-outline" target="_blank">View Certificate</a>
+                </div>
+                <div class="achievement-card">
+                    <h4>Standard First Aid</h4>
+                    <p class="issuer">Singapore Resuscitation Council</p>
+                    <p class="date">Academiclinic Pte Ltd</p>
+                    <a href="../assets/professional_credentials/ACCS_SFA_eCERT_NYP_CPR.pdf" class="btn-outline" target="_blank">View Certificate</a>
+                </div>
+            </div>
+        </div>
 
-            Add my fun facts here as well! 
-        </p>
+        <div class="achievement-category">
+            <h3>Technical Courses<span class="accordion-icon"></span></h3>
+            <div class="achievement-grid">
+                <div class="achievement-card">
+                    <h4>Java Essential Training</h4>
+                    <p class="issuer">Syntax and Structure</p>
+                    <p class="date">Course Completion</p>
+                    <a href="../assets/technical_courses/CertificateOfCompletion_Java Essential Training Syntax and Structure.pdf" class="btn-outline" target="_blank">View Certificate</a>
+                </div>
+                <div class="achievement-card">
+                    <h4>Windows Subsystem for Linux</h4>
+                    <p class="issuer">Learning Course</p>
+                    <p class="date">Course Completion</p>
+                    <a href="../assets/technical_courses/CertificateOfCompletion_Learning Windows Subsystem for Linux.pdf" class="btn-outline" target="_blank">View Certificate</a>
+                </div>
+                <div class="achievement-card">
+                    <h4>C++ Essential Training</h4>
+                    <p class="issuer">Learning C++</p>
+                    <p class="date">Course Completion</p>
+                    <a href="../assets/technical_courses/CertificateOfCompletion_C Essential Training.pdf" class="btn-outline" target="_blank">View Certificate</a>
+                </div>
+                <div class="achievement-card">
+                    <h4>C++ Design Patterns</h4>
+                    <p class="issuer">Structural</p>
+                    <p class="date">Course Completion</p>
+                    <a href="../assets/technical_courses/CertificateOfCompletion_C Design Patterns Structural.pdf" class="btn-outline" target="_blank">View Certificate</a>
+                </div>
+                <div class="achievement-card">
+                    <h4>C++ Development</h4>
+                    <p class="issuer">Advanced Concepts & Lambda Expressions</p>
+                    <p class="date">Course Completion</p>
+                    <a href="../assets/technical_courses/CertificateOfCompletion_C Development Advanced Concepts Lambda Expressions and Best Practices.pdf" class="btn-outline" target="_blank">View Certificate</a>
+                </div>
+                <div class="achievement-card">
+                    <h4>Learning C++</h4>
+                    <p class="issuer">C++ Programming</p>
+                    <p class="date">Course Completion</p>
+                    <a href="../assets/technical_courses/CertificateOfCompletion_Learning C++.pdf" class="btn-outline" target="_blank">View Certificate</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="achievement-category">
+            <h3>Academic & Merit Awards<span class="accordion-icon"></span></h3>
+            <div class="achievement-grid">
+                <div class="achievement-card">
+                    <h4>Edusave Academic Achievement</h4>
+                    <p class="issuer">Ministry of Education</p>
+                    <p class="date">2019, 2020</p>
+                    <a href="../assets/academic_merit_awards/Academic_Achievements_Yoshana.pdf" class="btn-outline" target="_blank">View Certificate</a>
+                </div>
+                <div class="achievement-card">
+                    <h4>Edusave Merit Bursary</h4>
+                    <p class="issuer">Ministry of Education</p>
+                    <p class="date">2019, 2020</p>
+                    <a href="../assets/academic_merit_awards/Merit_Bursary_Yoshana.pdf" class="btn-outline" target="_blank">View Certificate</a>
+                </div>
+                <div class="achievement-card">
+                    <h4>Singapore Junior Physics Olympiad 2022</h4>
+                    <p class="issuer">Honourable Mention </p>
+                    <p class="date">Secondary School</p>
+                    <a href="../assets/academic_merit_awards/SJPO_Yoshana.pdf" class="btn-outline" target="_blank">View Certificate</a>
+                </div>
+                <div class="achievement-card">
+                    <h4>Academic Excellence Award</h4>
+                    <p class="issuer">Tamil Language - Secondary School </p>
+                    <p class="date">2019, 2020</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="achievement-category">
+            <h3>Leadership Recognitions<span class="accordion-icon"></span></h3>
+            <div class="achievement-grid">
+                <div class="achievement-card">
+                    <h4>Club President</h4>
+                    <p class="issuer">AVA Club</p>
+                    <p class="date">2021 - 2022</p>
+                    <a href="../assets/leadership recognitions/CCA_Leadership_Yoshana.pdf" class="btn-outline" target="_blank">View Certificate</a>
+                </div>
+                <div class="achievement-card">
+                    <h4>Edusave EAGLES Award</h4>
+                    <p class="issuer">Leadership & Service</p>
+                    <p class="date">2018, 2022</p>
+                    <a href="../assets/leadership recognitions/Eagles_Award_Yoshana.pdf" class="btn-outline" target="_blank">View Certificate</a>
+                </div>
+                <div class="achievement-card">
+                    <h4>Edusave Character Award (ECHA)</h4>
+                    <p class="issuer">Ministry of Education</p>
+                    <p class="date">2019, 2020, 2022</p>
+                    <a href="../assets/leadership recognitions/Character_Award_Yoshana.pdf" class="btn-outline" target="_blank">View Certificate</a>
+                </div>
+                <div class="achievement-card">
+                    <h4>Best Peer Support Award</h4>
+                    <p class="issuer">Punggol Secondary School</p>
+                    <p class="date">2021, 2022</p>
+                </div>
+                <div class="achievement-card">
+                    <h4>Loo Kin Ben Bursary (CCA) </h4>
+                    <p class="issuer">Punggol Secondary School</p>
+                    <p class="date">2021, 2022</p>
+                </div>
+                <div class="achievement-card">
+                    <h4>Student Leadership Camp</h4>
+                    <p class="issuer">Completion</p>
+                    <p class="date">2020</p>
+                    <a href="../assets/leadership recognitions/Leadership_sec2_Yoshana.pdf" class="btn-outline" target="_blank">View Certificate</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="achievement-category">
+            <h3>Competitions & Hackathons<span class="accordion-icon"></span></h3>
+            <div class="achievement-grid">
+                <div class="achievement-card">
+                    <h4>Code Overflow Hackathon</h4>
+                    <p class="issuer">Participation</p>
+                    <p class="date">Sep 2024</p>
+                    <a href="../assets/competitions_hackathons/SIT_NYP_Hackathon.pdf" class="btn-outline" target="_blank">View Certificate</a>
+                </div>
+                <div class="achievement-card">
+                    <h4>NUS Statistics Competition</h4>
+                    <p class="issuer">Participation</p>
+                    <p class="date">2021</p>
+                    <a href="../assets/competitions_hackathons/Statistics_Competition_Yoshana.pdf" class="btn-outline" target="_blank">View Certificate</a>
+                </div>
+                <div class="achievement-card">
+                    <h4>Singapore Mathematical Olympiad</h4>
+                    <p class="issuer">Participation</p>
+                    <p class="date">Secondary School</p>
+                    <a href="../assets/competitions_hackathons/Math_olympiad_Yoshana.pdf" class="btn-outline" target="_blank">View Certificate</a>
+                </div>
+                <div class="achievement-card">
+                    <h4>Singapore Junior Chemistry Olympiad 2022</h4>
+                    <p class="issuer">Participation</p>
+                    <p class="date">Secondary School</p>
+                    <a href="../assets/competitions_hackathons/SJCO_Yoshana.pdf" class="btn-outline" target="_blank">View Certificate</a>
+                </div>
+                <div class="achievement-card">
+                    <h4>SG Garden Photographer of the Year</h4>
+                    <p class="issuer">Participation</p>
+                    <p class="date">2019, 2021</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="contact" class="reveal">
         <h2>Contact</h2>
-        <p>
-            AI & Data Engineering student with internship experience in optimizing production computer vision systems. 
-            Experienced in deep learning, robotics integration, and AI deployment workflows. Passionate about building scalable and real-world AI solutions.
-        </p>
-        <p>Thank you for visiting my portfolio! 
-            Feel free to reach out to me via email at yoshana.magendran.18@gmail.com or through my social media profiles.</p>
-        <div style="margin-top: 20px;"> 
-            <a href="https://www.linkedin.com/in/yoshana-magendran-32666330a/" class="btn" target="_blank">LinkedIn</a>
-            <a href="https://github.com/yoshana18" class="btn" target="_blank">GitHub</a>
+        <div class="contact-wrapper">
+            <p class="contact-intro">
+                Thank you for visiting my portfolio! I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+                Feel free to reach out to me directly.
+                <br><br>
+            </p>
+            <div class="social-links-container">
+                <a href="mailto:yoshana.magendran.18@gmail.com" class="social-card"> Email </a>
+                <a href="https://www.linkedin.com/in/yoshana-magendran-32666330a/" class="social-card" target="_blank"> LinkedIn </a>
+                <a href="https://github.com/yoshana18" class="social-card" target="_blank"> GitHub </a>
+                <a href="https://wa.me/88304287" class="social-card" target="_blank"> WhatsApp </a>
+                <a href="https://www.instagram.com/teddy.bearrrrrrs_/?utm_source=qr" class="social-card" target="_blank"> Instagram </a>
+            </div>
         </div>
     </section>
 
@@ -374,14 +591,23 @@
         <div class="modal-content">
             <span class="close-button">&times;</span>
             <h2 id="modal-title"></h2>
+            <div id="modal-gallery" class="modal-gallery"></div>
             <img id="modal-img" src="" alt="Project Image">
             <p id="modal-desc"></p>
             <a id="modal-gh-link" href="#" class="btn" target="_blank">View on GitHub</a>
         </div>
     </div>
 
+    <!-- Certificate Modal (PDF Viewer) -->
+    <div id="cert-modal" class="modal">
+        <div class="modal-content cert-modal-content">
+            <span class="close-button cert-close">&times;</span>
+            <iframe id="cert-frame" src="" frameborder="0"></iframe>
+        </div>
+    </div>
+
     <footer>
-        <p> CopyRight &copy; <span id="year"></span> Yoshana Magendran</p>
+        <p> Copyright &copy; <span id="year"></span> Yoshana Magendran</p>
     </footer>
 </body>
 
