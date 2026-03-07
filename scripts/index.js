@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Modal Logic
     const modal = document.getElementById('project-modal');
-    const closeButton = document.querySelector('.close-button');
+    const closeButton = document.querySelector('#project-modal .close-button');
     const learnMoreButtons = document.querySelectorAll('.btn-learn-more');
 
     const modalTitle = document.getElementById('modal-title');
