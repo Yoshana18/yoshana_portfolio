@@ -152,6 +152,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (certModal && certFrame && certButtons.length > 0) {
         certButtons.forEach(btn => {
             btn.addEventListener('click', (e) => {
+                // On mobile, allow the link to open in a new tab (native PDF viewer)
+                if (window.innerWidth <= 768) return;
+
                 const href = btn.getAttribute('href');
                 // Check if it is a PDF or a local file (doesn't start with http/https)
                 // External links (Credly, etc.) will function normally (new tab)
