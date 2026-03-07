@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yoshana's Website</title>
+    <meta name="description" content="Portfolio of Yoshana Magendran - AI & Data Engineering Student specializing in Computer Vision and Real-World Deployment.">
+    <link rel="icon" href="./assets/favicon.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/index.css">
-    <script src="../scripts/index.js" defer></script>
+    <link rel="stylesheet" href="./styles/index.css">
+    <script src="./scripts/index.js" defer></script>
 </head>
 
 <body>
@@ -20,6 +22,7 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#leadership">Events</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -32,18 +35,30 @@
             I am currently a Final Year Student @ Nanyang Polytechnic, pursuing the course AI & Data Engineering.
             Join me on this portfolio journey, so that you can know more about me and what I did! 
         </p>
-        <a href="#projects" class="btn">View My Work</a>
+        <div class="hero-buttons">
+            <a href="./assets/resume/Yoshana_Resume_18Feb.pdf" class="btn btn-secondary" target="_blank" download>Download Resume</a>
+            <a href="./assets/resume/Yoshana_CoverLetter_18Feb.pdf" class="btn btn-secondary" target="_blank" download>Download CV</a>
+        </div>
     </section>
 
     <section id="about" class="reveal">
         <h2>About Me</h2>
-        <p>
-            I'm Yoshana Magendran, a final-year student pursuing a Diploma in AI and Data Engineering at Nanyang Polytechnic. 
-            As an aspiring engineer, I am eager to explore the dynamic field of Artificial Intelligence, with hands-on experience in computer vision, model optimization, and deployment-ready AI systems. 
-            Through internships, exhibitions, and technical projects, I've contributed to real-world applications in object detection, robotics, and intelligent automation. 
-            I'm particularly passionate about bridging research and production-designing AI solutions that are accurate, efficient, scalable, and practical. 
-            I thrive as a quick learner under guidance, an active listener, and a proactive team player with proven leadership experience.
-        </p>
+        <div class="about-container">
+            <div class="about-image">
+                <img src="./assets/about_me/myself.jpeg" alt="Yoshana Magendran">
+            </div>
+            <div class="about-text">
+                <p>
+                    I'm Yoshana Magendran, a final-year student pursuing a Diploma in AI and Data Engineering at Nanyang Polytechnic. 
+                    As an aspiring engineer, I am eager to explore the dynamic field of Artificial Intelligence, with hands-on experience in computer vision, model optimization, and deployment-ready AI systems. 
+                </p>
+                <p>
+                    Through internships, exhibitions, and technical projects, I've contributed to real-world applications in object detection, robotics, and intelligent automation. 
+                    I'm particularly passionate about bridging research and production-designing AI solutions that are accurate, efficient, scalable, and practical. 
+                    I thrive as a quick learner under guidance, an active listener, and a proactive team player with proven leadership experience.
+                </p>
+            </div>
+        </div>
     </section>
 
     <section id="education" class="reveal">
@@ -231,9 +246,10 @@
                  data-long-desc="Project Overview: Developed an AI-based classification system to address the growing issue of AI-generated content being passed off as authentic media. 
                  The model leverages deep learning techniques to analyze subtle frequency-domain artifacts and visual inconsistencies that differentiate real images from synthetically generated ones.
                  To support production-level deployment, the application was containerized and orchestrated using Kubernetes, ensuring scalability, load balancing, and high availability under varying traffic conditions.
-                 The final system provides users with a reliable and scalable authenticity verification tool for real-world digital content validation."
+                 The final system provides users with a reliable and scalable authenticity verification tool for real-world digital content validation.
+                 My Contribution: Worked on image preprocessing container and dockerfile. Consolidated the results from each container and debugged minikube services to run the application"
                  data-gh-link="https://github.com/jiaawennnn/k8s_project"
-                 data-img-src="../assets/placeholder-flowchart.png">
+                 data-img-src="./assets/static_images/Kub_Architecture.png">
                 <div class="project-content">
                     <h3>AI Real vs Generated Image Detector</h3>
                     <p>
@@ -254,9 +270,12 @@
 
             <div class="project-card"
                  data-title="Associate AI Engineer Project - AI Singapore"
-                 data-long-desc="Developed a computer vision system using OpenCV and Python to detect and classify objects in real-time video streams. The project involved implementing image processing techniques 
-                 such as edge detection, contour analysis, and feature extraction to enable accurate object recognition in various lighting conditions."
-                 data-gh-link="https://github.com/FutureYY/Plant_Disease">
+                 data-images='[{"src": "./assets/static_images/caie_blr.png", "caption": "Binary Logistic Regression Results"}, {"src": "./assets/static_images/caie_gbc.png", "caption": "Gradient Boosting Classifier"}]'
+                 data-long-desc="The goal was to predict client subscription to term deposits using client and marketing campaign data. 
+                 This initiative aimed to optimize marketing strategies and resource allocation by targeting clients most likely to respond positively. 
+                 So, I designed and developed an end-to-end machine learning pipeline using Kedro to ingest SQL data, clean datasets, and engineer features. 
+                 Built and evaluated four predictive models (including Logistic Regression, Gradient Boosting, Decision Tree & Random Forest) to classify subscription status. 
+                 Identified key features driving customer decisions to improve financial outcomes and streamline operations.">
                 <div class="project-content">
                     <h3>Associate AI Engineer Project</h3>
                     <p>
@@ -276,7 +295,7 @@
 
             <div class="project-card"
                  data-title="High Resolution Image Processing - Internship"
-                 data-images='[{"src": "../assets/static_images/Darknet_FLowchart.png", "caption": "Darknet-Yolov7 Flowchart"}, {"src": "../assets/static_images/TensorRT_Flowchart.png", "caption": "TensorRT-Nanodet Flowchart"}]'
+                 data-images='[{"src": "./assets/static_images/Darknet_FLowchart.png", "caption": "Darknet-Yolov7 Flowchart"}, {"src": "./assets/static_images/TensorRT_Flowchart.png", "caption": "TensorRT-Nanodet Flowchart"}]'
                  data-long-desc="Developed a memory-efficient inference pipeline to handle ultra high-resolution industrial images (up to 11,000 x 5,000 pixels) that exceed conventional GPU processing limits. 
                  Instead of down-sampling large images, which causes loss of fine-grained defects - the system divides them into 416x416 tiles matching the model's native input size.
                  Each tile is processed independently using YOLOv7-Tiny (Darknet) and Nanodet-Plus (TensorRT), with bounding boxes remapped into global coordinates before stitching results back into the original image space.
@@ -302,14 +321,14 @@
             </div>
             <div class="project-card"
                  data-title="Automation and Robotics Technology"
-                 data-images='[{"src": "../assets/static_images/ART_System_FlowChart.png", "caption": "System Flowchart"}, {"src": "../assets/static_images/ART_Components_Block_Diagram.png", "caption": "Block Diagram"}]'
+                 data-images='[{"src": "./assets/static_images/ART_System_FlowChart.png", "caption": "System Flowchart"}, {"src": "./assets/static_images/ART_Components_Block_Diagram.png", "caption": "Block Diagram"}]'
                  data-long-desc="Project Overview: Rescue Rhino is an autonomous amphibious patrol system designed for beach safety monitoring and security surveillance. The platform operates as a wheeled land vehicle and transitions 
                  into water mode through a retractable wheel mechanism and deployed propulsion system.
                  It performs automated coastal patrols, integrating detection capabilities to identify emergencies and support rapid response scenarios. 
                  The system is also equipped with surveillance cameras to monitor restricted areas and detect unauthorized access.
                  Rescue Rhino supports Wi-Fi and Bluetooth connectivity for real-time configuration, communication, and coordination with external systems, enabling scalable and intelligent patrolling operations across mixed-terrain environments.
 
-                 My Contribution: Developed the control algorithms and researched on the integrated various sensors for real-time monitoring and feedback. Desigbed Block Diagram, Control FlowChart, 
+                 My Contribution: Developed the control algorithms and researched on the integrated various sensors for real-time monitoring and feedback. Designed Block Diagram, Control FlowChart, 
                  RQT Graph and Cost Analysis of the resources required for rescue rhino">
                 <div class="project-content">
                     <h3>Rescue Rhino - Autonomous Amphibious Patrol Platform</h3>
@@ -338,8 +357,7 @@
 
                  My Contribution: Developed the conveyor belt rotation logic using servo motors and acted as the code merger to integrate team components."
                  data-gh-link="https://www.hackster.io/women-in-stem/soooooolar-18fbc7"
-                 data-img-src="../assets/placeholder-image.png"
-                 data-images='[{"src": "../assets/static_images/Vertical_farming.png", "caption": "Prototype Visualisation"}]'>
+                 data-images='[{"src": "./assets/static_images/Vertical_farming.png", "caption": "Prototype Visualisation"}]'>
                 <div class="project-content">
                     <h3>Rotatable Portable Vertical Farming System</h3>
                     <p>
@@ -358,9 +376,14 @@
             </div>
 
             <div class="project-card"
-                 data-title="Internet of Things Application">
+                 data-title="IoT Elderly Health Monitoring System"
+                 data-long-desc="Project Overview: Designed an IoT-based elderly health monitoring system to enhance safety for independent living. 
+                 The system utilizes a network of sensors (motion, temperature, and fall detection) connected to microcontrollers to track daily activity and environmental conditions. 
+                 Real-time data is transmitted to a central dashboard, enabling caregivers to monitor status and receive alerts for anomalies. 
+                 My Contribution: Led the hardware integration of Arduino and Raspberry Pi modules. Developed the Python scripts for sensor data acquisition and implemented the communication protocol between the edge devices and the web dashboard.">
+                 <!-- data-images='[{"src": "./assets/static_images/IOTA_Prototype.png", "caption": "Prototype Visualisation"}]' -->
                 <div class="project-content">
-                    <h3>Internet of Things Application</h3>
+                    <h3>IoT Elderly Health Monitoring System</h3>
                     <p>Led the development of an elderly health monitoring system. Integrated various sensors and created an online dashboard to visualize real-time data for tracking activity and environment.</p>
                 </div>
                 <div class="project-footer">
@@ -428,37 +451,37 @@
                     <h4>Java Essential Training</h4>
                     <p class="issuer">Syntax and Structure</p>
                     <p class="date">Course Completion</p>
-                    <a href="../assets/technical_courses/CertificateOfCompletion_Java Essential Training Syntax and Structure.pdf" class="btn-outline" target="_blank">View Certificate</a>
+                    <a href="./assets/technical_courses/CertificateOfCompletion_Java Essential Training Syntax and Structure.pdf" class="btn-outline" target="_blank">View Certificate</a>
                 </div>
                 <div class="achievement-card">
                     <h4>Windows Subsystem for Linux</h4>
                     <p class="issuer">Learning Course</p>
                     <p class="date">Course Completion</p>
-                    <a href="../assets/technical_courses/CertificateOfCompletion_Learning Windows Subsystem for Linux.pdf" class="btn-outline" target="_blank">View Certificate</a>
+                    <a href="./assets/technical_courses/CertificateOfCompletion_Learning Windows Subsystem for Linux.pdf" class="btn-outline" target="_blank">View Certificate</a>
                 </div>
                 <div class="achievement-card">
                     <h4>C++ Essential Training</h4>
                     <p class="issuer">Learning C++</p>
                     <p class="date">Course Completion</p>
-                    <a href="../assets/technical_courses/CertificateOfCompletion_C Essential Training.pdf" class="btn-outline" target="_blank">View Certificate</a>
+                    <a href="./assets/technical_courses/CertificateOfCompletion_C Essential Training.pdf" class="btn-outline" target="_blank">View Certificate</a>
                 </div>
                 <div class="achievement-card">
                     <h4>C++ Design Patterns</h4>
                     <p class="issuer">Structural</p>
                     <p class="date">Course Completion</p>
-                    <a href="../assets/technical_courses/CertificateOfCompletion_C Design Patterns Structural.pdf" class="btn-outline" target="_blank">View Certificate</a>
+                    <a href="./assets/technical_courses/CertificateOfCompletion_C Design Patterns Structural.pdf" class="btn-outline" target="_blank">View Certificate</a>
                 </div>
                 <div class="achievement-card">
                     <h4>C++ Development</h4>
                     <p class="issuer">Advanced Concepts & Lambda Expressions</p>
                     <p class="date">Course Completion</p>
-                    <a href="../assets/technical_courses/CertificateOfCompletion_C Development Advanced Concepts Lambda Expressions and Best Practices.pdf" class="btn-outline" target="_blank">View Certificate</a>
+                    <a href="./assets/technical_courses/CertificateOfCompletion_C Development Advanced Concepts Lambda Expressions and Best Practices.pdf" class="btn-outline" target="_blank">View Certificate</a>
                 </div>
                 <div class="achievement-card">
                     <h4>Learning C++</h4>
                     <p class="issuer">C++ Programming</p>
                     <p class="date">Course Completion</p>
-                    <a href="../assets/technical_courses/CertificateOfCompletion_Learning C++.pdf" class="btn-outline" target="_blank">View Certificate</a>
+                    <a href="./assets/technical_courses/CertificateOfCompletion_Learning C++.pdf" class="btn-outline" target="_blank">View Certificate</a>
                 </div>
             </div>
         </div>
@@ -470,19 +493,19 @@
                     <h4>Edusave Academic Achievement</h4>
                     <p class="issuer">Ministry of Education</p>
                     <p class="date">2019, 2020</p>
-                    <a href="../assets/academic_merit_awards/Academic_Achievements_Yoshana.pdf" class="btn-outline" target="_blank">View Certificate</a>
+                    <a href="./assets/academic_merit_awards/Academic_Achievements_Yoshana.pdf" class="btn-outline" target="_blank">View Certificate</a>
                 </div>
                 <div class="achievement-card">
                     <h4>Edusave Merit Bursary</h4>
                     <p class="issuer">Ministry of Education</p>
                     <p class="date">2019, 2020</p>
-                    <a href="../assets/academic_merit_awards/Merit_Bursary_Yoshana.pdf" class="btn-outline" target="_blank">View Certificate</a>
+                    <a href="./assets/academic_merit_awards/Merit_Bursary_Yoshana.pdf" class="btn-outline" target="_blank">View Certificate</a>
                 </div>
                 <div class="achievement-card">
                     <h4>Singapore Junior Physics Olympiad 2022</h4>
                     <p class="issuer">Honourable Mention </p>
                     <p class="date">Secondary School</p>
-                    <a href="../assets/academic_merit_awards/SJPO_Yoshana.pdf" class="btn-outline" target="_blank">View Certificate</a>
+                    <a href="./assets/academic_merit_awards/SJPO_Yoshana.pdf" class="btn-outline" target="_blank">View Certificate</a>
                 </div>
                 <div class="achievement-card">
                     <h4>Academic Excellence Award</h4>
@@ -499,19 +522,19 @@
                     <h4>Club President</h4>
                     <p class="issuer">AVA Club</p>
                     <p class="date">2021 - 2022</p>
-                    <a href="../assets/leadership recognitions/CCA_Leadership_Yoshana.pdf" class="btn-outline" target="_blank">View Certificate</a>
+                    <a href="./assets/leadership recognitions/CCA_Leadership_Yoshana.pdf" class="btn-outline" target="_blank">View Certificate</a>
                 </div>
                 <div class="achievement-card">
                     <h4>Edusave EAGLES Award</h4>
                     <p class="issuer">Leadership & Service</p>
                     <p class="date">2018, 2022</p>
-                    <a href="../assets/leadership recognitions/Eagles_Award_Yoshana.pdf" class="btn-outline" target="_blank">View Certificate</a>
+                    <a href="./assets/leadership recognitions/Eagles_Award_Yoshana.pdf" class="btn-outline" target="_blank">View Certificate</a>
                 </div>
                 <div class="achievement-card">
                     <h4>Edusave Character Award (ECHA)</h4>
                     <p class="issuer">Ministry of Education</p>
                     <p class="date">2019, 2020, 2022</p>
-                    <a href="../assets/leadership recognitions/Character_Award_Yoshana.pdf" class="btn-outline" target="_blank">View Certificate</a>
+                    <a href="./assets/leadership recognitions/Character_Award_Yoshana.pdf" class="btn-outline" target="_blank">View Certificate</a>
                 </div>
                 <div class="achievement-card">
                     <h4>Best Peer Support Award</h4>
@@ -527,7 +550,7 @@
                     <h4>Student Leadership Camp</h4>
                     <p class="issuer">Completion</p>
                     <p class="date">2020</p>
-                    <a href="../assets/leadership recognitions/Leadership_sec2_Yoshana.pdf" class="btn-outline" target="_blank">View Certificate</a>
+                    <a href="./assets/leadership recognitions/Leadership_sec2_Yoshana.pdf" class="btn-outline" target="_blank">View Certificate</a>
                 </div>
             </div>
         </div>
@@ -539,30 +562,78 @@
                     <h4>Code Overflow Hackathon</h4>
                     <p class="issuer">Participation</p>
                     <p class="date">Sep 2024</p>
-                    <a href="../assets/competitions_hackathons/SIT_NYP_Hackathon.pdf" class="btn-outline" target="_blank">View Certificate</a>
+                    <a href="./assets/competitions_hackathons/SIT_NYP_Hackathon.pdf" class="btn-outline" target="_blank">View Certificate</a>
                 </div>
                 <div class="achievement-card">
                     <h4>NUS Statistics Competition</h4>
                     <p class="issuer">Participation</p>
                     <p class="date">2021</p>
-                    <a href="../assets/competitions_hackathons/Statistics_Competition_Yoshana.pdf" class="btn-outline" target="_blank">View Certificate</a>
+                    <a href="./assets/competitions_hackathons/Statistics_Competition_Yoshana.pdf" class="btn-outline" target="_blank">View Certificate</a>
                 </div>
                 <div class="achievement-card">
                     <h4>Singapore Mathematical Olympiad</h4>
                     <p class="issuer">Participation</p>
                     <p class="date">Secondary School</p>
-                    <a href="../assets/competitions_hackathons/Math_olympiad_Yoshana.pdf" class="btn-outline" target="_blank">View Certificate</a>
+                    <a href="./assets/competitions_hackathons/Math_olympiad_Yoshana.pdf" class="btn-outline" target="_blank">View Certificate</a>
                 </div>
                 <div class="achievement-card">
                     <h4>Singapore Junior Chemistry Olympiad 2022</h4>
                     <p class="issuer">Participation</p>
                     <p class="date">Secondary School</p>
-                    <a href="../assets/competitions_hackathons/SJCO_Yoshana.pdf" class="btn-outline" target="_blank">View Certificate</a>
+                    <a href="./assets/competitions_hackathons/SJCO_Yoshana.pdf" class="btn-outline" target="_blank">View Certificate</a>
                 </div>
                 <div class="achievement-card">
                     <h4>SG Garden Photographer of the Year</h4>
                     <p class="issuer">Participation</p>
                     <p class="date">2019, 2021</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="leadership" class="reveal">
+        <h2>Leadership & Events Highlights</h2>
+        <div class="poker-container">
+            <div class="poker-card" style="--i:-2.5">
+                <img src="./assets/about_me/ava_leadership_2.jpeg" alt="Leadership Event" class="img-contain">
+                <div class="card-info">
+                    <h3>AVA Club Equipments Demonstration</h3>
+                </div>
+            </div>
+            <div class="poker-card" style="--i:-1.5">
+                <img src="./assets/about_me/hackathon_3.jpeg" alt="Hackathon Experience" class="img-contain">
+                <div class="card-info">
+                    <h3>Hackathon Experience</h3>
+                </div>
+            </div>
+            <div class="poker-card" style="--i:1.5">
+                <img src="./assets/about_me/hackathon_1.jpeg" alt="Presentation" class="img-contain">
+                <div class="card-info">
+                    <h3>Hackathon Presentation</h3>
+                </div>
+            </div>
+            <div class="poker-card" style="--i:-0.5">
+                <img src="./assets/about_me/fmo.jpeg" alt="Freshmen Orientation" class="img-contain">
+                <div class="card-info">
+                    <h3>Freshmen Orientation Student Mentor</h3>
+                </div>
+            </div>
+            <div class="poker-card" style="--i:0.5">
+                <img src="./assets/about_me/switch_event.jpeg" alt="SWITCH Event" class="img-contain">
+                <div class="card-info">
+                    <h3>SWITCH Exhibition Assistant Presenter</h3>
+                </div>
+            </div>
+            <div class="poker-card" style="--i:1.5">
+                <img src="./assets/about_me/icude_event.jpeg" alt="ICUBE Event" class="img-contain">
+                <div class="card-info">
+                    <h3>ICUBE Event Assistant Presenter</h3>
+                </div>
+            </div>
+            <div class="poker-card" style="--i:2.5">
+                <video src="./assets/about_me/oh_presentation.mp4" autoplay muted loop playsinline></video>
+                <div class="card-info">
+                    <h3>NYP Open House Presentation</h3>
                 </div>
             </div>
         </div>
@@ -607,7 +678,7 @@
     </div>
 
     <footer>
-        <p> Copyright &copy; <span id="year"></span> Yoshana Magendran</p>
+        <p> Copyright &copy; <span id="year"></span> Yoshana Magendran & Creds Gemini</p>
     </footer>
 </body>
 
