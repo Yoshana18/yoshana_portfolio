@@ -191,4 +191,78 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // Theme Toggle Logic
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    const setTheme = (theme) => {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        if (themeToggleBtn) {
+            themeToggleBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
+        }
+    };
+
+    // Check for saved user preference, if any, on load
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme) {
+        setTheme(currentTheme);
+    } else if (prefersDarkScheme.matches) {
+        setTheme('dark');
+    }
+
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            if (theme === 'dark') {
+                setTheme('light');
+            } else {
+                setTheme('dark');
+            }
+        });
+    }
+
+    // Back to Top Button Logic
+    const backToTopBtn = document.getElementById('back-to-top');
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    });
+
+    if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // Active Navigation Highlighting
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav ul li a');
+
+    // Use IntersectionObserver with a rootMargin that creates a "line" in the middle of the screen
+    const navObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${id}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }, { rootMargin: '-50% 0px -50% 0px' });
+
+    sections.forEach(section => {
+        navObserver.observe(section);
+    });
 });
