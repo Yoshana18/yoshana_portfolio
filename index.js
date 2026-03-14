@@ -75,9 +75,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     const images = JSON.parse(imagesData);
                     modalGallery.style.display = 'flex';
                     images.forEach(img => {
-                        const div = document.createElement('div');
+                        const div = document.createElement('div'); // The container for one gallery item
                         div.className = 'gallery-item';
-                        div.innerHTML = `<img src="${img.src}" alt="${img.caption}"><p class="gallery-caption">${img.caption}</p>`;
+                        const imgElement = document.createElement('img');
+                        imgElement.src = img.src;
+                        imgElement.alt = img.caption || 'Project image';
+                        const captionElement = document.createElement('p');
+                        captionElement.className = 'gallery-caption';
+                        captionElement.textContent = img.caption;
+                        div.append(imgElement, captionElement);
                         modalGallery.appendChild(div);
                     });
                 } catch (e) {
@@ -264,5 +270,53 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sections.forEach(section => {
         navObserver.observe(section);
+    });
+
+    // --- Interactive Like Buttons for Projects ---
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    projectCards.forEach((card, index) => {
+        const footer = card.querySelector('.project-footer');
+        
+        if (footer) {
+            // Create the button
+            const likeBtn = document.createElement('button');
+            likeBtn.className = 'like-btn';
+            
+            // Create a unique key for local storage to remember if this user liked it
+            const projectTitle = card.dataset.title || `project-${index}`;
+            const storageKey = `liked-${projectTitle.replace(/\s+/g, '-').toLowerCase()}`;
+            
+            // Check if user already liked it, and generate a baseline mock count (e.g. 12-42 likes)
+            let isLiked = localStorage.getItem(storageKey) === 'true';
+            let baseCount = (index * 7 + 13) % 40 + 10; // Generates a static random-looking number
+            let currentCount = isLiked ? baseCount + 1 : baseCount;
+
+            // Set initial HTML
+            const heartSpan = document.createElement('span');
+            heartSpan.className = 'heart';
+            heartSpan.textContent = isLiked ? '❤️' : '🤍';
+            const countSpan = document.createElement('span');
+            countSpan.className = 'count';
+            countSpan.textContent = currentCount;
+            footer.appendChild(likeBtn);
+            likeBtn.append(heartSpan, ' ', countSpan); // ' ' creates a text node for space
+
+            // Add click interaction
+            likeBtn.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevents bubbling if the card itself has a click event
+                isLiked = !isLiked;
+                localStorage.setItem(storageKey, isLiked);
+                
+                currentCount = isLiked ? currentCount + 1 : currentCount - 1;
+                
+                heartSpan.textContent = isLiked ? '❤️' : '🤍';
+                countSpan.textContent = currentCount;
+                
+                // Add a small pop animation
+                heartSpan.style.animation = 'popAnimation 0.3s ease';
+                setTimeout(() => { heartSpan.style.animation = ''; }, 300);
+            });
+        }
     });
 });
