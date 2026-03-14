@@ -324,6 +324,31 @@ section p:last-of-type {
     flex-shrink: 0; /* Prevents button from shrinking */
 }
 
+/* Interactive Like Button */
+.like-btn {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 5px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+}
+
+.like-btn:hover {
+    border-color: var(--secondary-color);
+    background: rgba(217, 70, 239, 0.05);
+    transform: translateY(-2px);
+}
+
+.like-btn .heart {
+    transition: transform 0.2s ease;
+}
+
 .btn-learn-more:hover {
     background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(217, 70, 239, 0.1));    
     color: #fff;
@@ -462,6 +487,12 @@ section p:last-of-type {
     height: auto;
     border-radius: 8px;
     margin-bottom: 1rem;
+}
+
+@keyframes popAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.5); }
+    100% { transform: scale(1); }
 }
 
 @keyframes fadeIn { from {opacity: 0} to {opacity: 1} }
